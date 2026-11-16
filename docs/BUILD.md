@@ -22,6 +22,8 @@ The build imports the upstream assets using the desktop-compatible Godot rendere
 
 To package the verified HTML for ordinary static HTTPS hosting, run `node build-hosted.mjs PokeSurvivor-Standalone.html dist`. This extracts the exact compressed resources from the offline file. The generated `index.html` loads its assets from the same directory over HTTPS.
 
+Append `--cdn` to produce a build with assets split into parts of at most 16 MB. A launcher that fetches the generated page as text can supply its absolute asset directory using `<meta name="game-assets" content="…">` in the page head. The CDN build allows requests to `cdn.jsdelivr.net`.
+
 ## Code map
 
 | System | Godot source and browser execution |

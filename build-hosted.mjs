@@ -1,11 +1,13 @@
 import { createHash } from 'node:crypto';
-import { closeSync, mkdirSync, openSync, readFileSync, writeFileSync, writeSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const [source, destination] = process.argv.slice(2);
+const [source, destination, mode] = process.argv.slice(2);
 if (!source || !destination) {
-  throw new Error('Usage: node build-hosted.mjs PokeSurvivor-Standalone.html output-directory');
+  throw new Error('Usage: node build-hosted.mjs PokeSurvivor-Standalone.html output-directory [--cdn]');
 }
+if (mode && mode !== '--cdn') throw new Error(`Unknown option: ${mode}`);
+const maxPartBytes = mode === '--cdn' ? 16_000_000 : Infinity;
 
 const html = readFileSync(source, 'utf8');
 const firstPayload = html.indexOf('<script type="application/octet-stream" data-embedded=');
@@ -33,12 +35,13 @@ for (const [, name, encoded] of html.matchAll(pattern)) {
 const files = {};
 for (const [name, resource] of resources) {
   if (resource.size !== manifest[name].packed) throw new Error(`Incomplete resource ${name}`);
-  files[name] = `${name}.${resource.hash.digest('hex').slice(0, 16)}.bin`;
-  const fd = openSync(join(destination, files[name]), 'w');
-  try {
-    for (const chunk of resource.chunks) writeSync(fd, chunk);
-  } finally {
-    closeSync(fd);
+  const prefix = `${name}.${resource.hash.digest('hex').slice(0, 16)}`;
+  files[name] = [];
+  const bytes = Buffer.concat(resource.chunks, resource.size);
+  for (let offset = 0; offset < bytes.length; offset += maxPartBytes) {
+    const filename = bytes.length <= maxPartBytes ? `${prefix}.bin` : `${prefix}.part${files[name].length + 1}.bin`;
+    files[name].push(filename);
+    writeFileSync(join(destination, filename), bytes.subarray(offset, offset + maxPartBytes));
   }
 }
 
@@ -47,26 +50,37 @@ const end = shell.indexOf('async function readResource(name) {', start);
 if (start < 0 || end < 0) throw new Error('Missing resource loader');
 
 const networkLoader = `const resourceFiles = ${JSON.stringify(files)};
+const assetBase = ${mode === '--cdn' ? `document.querySelector('meta[name="game-assets"]')?.content || location.href` : 'location.href'};
 function embeddedStream(name) {
+  let index = 0;
   let reader;
   let packedBytes = 0;
   return new ReadableStream({
-    async start() {
-      const response = await fetch(resourceFiles[name]);
-      if (!response.ok || !response.body) throw new Error(\`Could not load \${name} (HTTP \${response.status}).\`);
-      reader = response.body.getReader();
-    },
     async pull(controller) {
-      const { value, done } = await reader.read();
-      if (done) {
-        if (packedBytes !== manifest[name].packed) throw new Error(\`Incomplete game resource: \${name}\`);
-        controller.close();
+      while (true) {
+        if (!reader) {
+          const filename = resourceFiles[name][index++];
+          if (!filename) {
+            if (packedBytes !== manifest[name].packed) throw new Error(\`Incomplete game resource: \${name}\`);
+            controller.close();
+            return;
+          }
+          const response = await fetch(new URL(filename, assetBase));
+          if (!response.ok || !response.body) throw new Error(\`Could not load \${filename} (HTTP \${response.status}).\`);
+          reader = response.body.getReader();
+        }
+        const { value, done } = await reader.read();
+        if (done) {
+          reader.releaseLock();
+          reader = undefined;
+          continue;
+        }
+        packedBytes += value.length;
+        bytesRead += value.length;
+        progress.value = bytesRead;
+        controller.enqueue(value);
         return;
       }
-      packedBytes += value.length;
-      bytesRead += value.length;
-      progress.value = bytesRead;
-      controller.enqueue(value);
     },
     cancel(reason) { return reader?.cancel(reason); },
   }).pipeThrough(new DecompressionStream('gzip'));
@@ -76,7 +90,7 @@ function embeddedStream(name) {
 const policy = "default-src 'none';";
 if (!shell.includes(policy)) throw new Error('Missing content security policy');
 const page = (shell.slice(0, start) + networkLoader + shell.slice(end))
-  .replace(policy, `${policy} connect-src 'self';`)
+  .replace(policy, `${policy} connect-src 'self'${mode === '--cdn' ? ' https://cdn.jsdelivr.net' : ''};`)
   .replace('Reading the embedded game…', 'Loading PokéSurvivor…');
 writeFileSync(join(destination, 'index.html'), page);
 writeFileSync(join(destination, '.nojekyll'), '');

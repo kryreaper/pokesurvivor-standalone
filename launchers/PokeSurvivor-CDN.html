@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>PokéSurvivor</title>
+<p id="status">Loading PokéSurvivor…</p>
+<script>
+const base = 'https://cdn.jsdelivr.net/gh/kryreaper/pokesurvivor-standalone@d548e1e34341723d4e936160678542622ffda4aa/';
+fetch(base + 'index.html').then(response => {
+  if (!response.ok) throw new Error('HTTP ' + response.status);
+  return response.text();
+}).then(html => {
+  if (!html.includes('<head>') || !html.includes('id="canvas"')) throw new Error('Unexpected response');
+  document.open();
+  document.write(html.replace('<head>', '<head><meta name="game-assets" content="' + base + '">'));
+  document.close();
+}).catch(error => {
+  document.getElementById('status').textContent = 'Could not load PokéSurvivor from jsDelivr. ' + error.message;
+});
+</script>
