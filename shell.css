@@ -1,0 +1,67 @@
+:root {
+  color-scheme: dark;
+  background: #111b2b;
+  color: #edf5fb;
+  font: 15px/1.45 system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+[hidden] { display: none !important; }
+
+#game {
+  width: 100%;
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  background: #16233a;
+}
+
+#stage { position: relative; overflow: hidden; }
+#canvas { width: 100%; height: 100%; display: block; outline: none; touch-action: none; }
+
+#loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  padding: 24px;
+  text-align: center;
+  background: radial-gradient(ellipse at 50% 40%, #2e4966, #142136 72%);
+}
+
+h1 { margin: 0; color: #ffdd78; font-size: clamp(2.2rem, 8vw, 5rem); line-height: 1.1; }
+h1 span { color: #f3f9ff; }
+progress { width: min(330px, 72vw); accent-color: #ffcc62; }
+nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 5px 12px; background: #111b2b; border-top: 1px solid #354960; }
+#storage { color: #c4d4e1; font-size: 13px; }
+.actions { display: flex; flex-wrap: wrap; gap: 6px; }
+
+button {
+  padding: 4px 11px;
+  border: 1px solid #526885;
+  border-radius: 5px;
+  color: #f4f8ff;
+  background: #24364c;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover:enabled { background: #38536d; }
+button:focus-visible, summary:focus-visible { outline: 2px solid #ffdd78; outline-offset: 2px; }
+button:disabled { cursor: default; opacity: .5; }
+dialog { max-width: min(680px, 90vw); max-height: 80vh; padding: 20px 24px; border: 1px solid #526885; border-radius: 10px; background: #16233a; color: inherit; }
+dialog::backdrop { background: #090e18d9; }
+dialog h2 { margin: 0 0 10px; color: #ffdd78; }
+.notices { margin: 12px 0; }
+details { padding: 4px 0; }
+summary { cursor: pointer; }
+a { color: #a9d6ff; }
+a:focus-visible { outline: 2px solid #ffdd78; outline-offset: 2px; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: .82rem; }
+
+@media (max-width: 550px) {
+  nav { flex-wrap: wrap; justify-content: center; gap: 4px; }
+  #storage { flex-basis: 100%; text-align: center; }
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="contributor" content="KryReaper">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'wasm-unsafe-eval' data:; style-src 'unsafe-inline'; worker-src data:; img-src data: blob:; base-uri 'none'; form-action 'none'">
+  <title>PokéSurvivor · Offline</title>
+  <style>@@CSS@@</style>
+</head>
+<body>
+  <main id="game">
+    <div id="stage">
+      <canvas id="canvas" tabindex="0" role="application" aria-label="PokéSurvivor game. Move with WASD or the arrow keys. Escape or P pauses play."></canvas>
+      <section id="loading" aria-labelledby="game-title">
+        <h1 id="game-title">Poké<span>Survivor</span></h1>
+        <p id="loading-message" role="status">Reading the embedded game…</p>
+        <progress id="progress" aria-label="Embedded game loading progress"></progress>
+        <noscript>Enable JavaScript in your browser to play.</noscript>
+      </section>
+    </div>
+    <nav aria-label="Offline game controls">
+      <span id="storage" aria-live="polite">Checking local storage…</span>
+      <div class="actions">
+        <button id="save" disabled>Save files</button>
+        <button id="credits">Credits</button>
+        <button id="fullscreen" hidden>Fullscreen</button>
+      </div>
+    </nav>
+    <dialog id="save-dialog" aria-labelledby="save-title">
+      <h2 id="save-title">Save files</h2>
+      <p id="save-help">Export your trainer progress and settings as JSON. Importing a save replaces the current trainer data.</p>
+      <p id="save-message" role="status"></p>
+      <div class="actions">
+        <button id="export">Export Save</button>
+        <button id="import">Import Save</button>
+        <button class="close">Close</button>
+      </div>
+      <input id="save-file" type="file" accept=".json,application/json" hidden>
+    </dialog>
+    <dialog id="credits-dialog" aria-labelledby="credits-title">
+      <h2 id="credits-title">Credits and licenses</h2>
+      <p>PokéSurvivor was created by JPTER78. JayElDragon developed the Godot port. This standalone Web edition adapts the Godot project and includes its original game data, artwork and sound.</p>
+      <p>Standalone edition · KryReaper · <a href="https://discord.gg/SjqVvVEh7f" target="_blank" rel="noopener noreferrer">Discord invite</a></p>
+      <p>SpriteCollab Pokémon sprites and animations are licensed under CC BY-NC 4.0. This fan game is for noncommercial use. Pokémon and related names and characters belong to their respective owners.</p>
+      <div class="notices">@@NOTICES@@</div>
+      <button class="close">Close</button>
+    </dialog>
+  </main>
+  @@PAYLOAD@@
+  <script>@@ENGINE@@</script>
+  <script>@@BOOT@@</script>
+</body>
+</html>

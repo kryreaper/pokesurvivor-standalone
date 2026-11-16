@@ -1,0 +1,7 @@
+node_modules/
+qa-output/
+web-export/
+.godot/
+*.tmp
+PokeSurvivor-Standalone.html
+.env
