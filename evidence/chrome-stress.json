@@ -1,0 +1,282 @@
+{
+  "name": "chrome",
+  "browserVersion": "157.0.8103.78",
+  "network": [],
+  "errors": [],
+  "messages": [
+    "log: Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org",
+    "log: OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL",
+    "log: Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+  ],
+  "checks": {
+    "start": {
+      "url": "file:",
+      "online": false,
+      "pixels": [
+        1280,
+        717
+      ]
+    },
+    "audio": [
+      {
+        "state": "running",
+        "peak": 0.13908858597278595
+      },
+      {
+        "state": "running",
+        "peak": 0
+      }
+    ],
+    "selected": 4,
+    "pause": true,
+    "movement": {
+      "wasd": 145.824493408203,
+      "arrows": 143.98274230957
+    },
+    "run": {
+      "peakEnemies": 71,
+      "peakBullets": 8,
+      "bossSeen": false,
+      "xpSeen": true,
+      "firstChoice": {
+        "boss": false,
+        "bullets": 3,
+        "choices": 3,
+        "dead": false,
+        "enemies": 10,
+        "fps": 188,
+        "hp": 168,
+        "kills": 6,
+        "level": 2,
+        "maxHp": 168,
+        "moves": [
+          [
+            "ember",
+            1
+          ]
+        ],
+        "nearestEnemy": [
+          376.358703613281,
+          460.515228271484
+        ],
+        "nearestOrb": [
+          508.183929443359,
+          145.024124145508
+        ],
+        "orbs": 4,
+        "paused": false,
+        "position": [
+          132.549453735352,
+          288.403411865234
+        ],
+        "time": 7.03331683501682,
+        "upgrades": {
+          "amp": 0,
+          "atk": 0,
+          "cd": 0,
+          "def": 0,
+          "dstrike": 0,
+          "edge": 0,
+          "fang": 0,
+          "heal": 0,
+          "hp": 0,
+          "lens": 0,
+          "mag": 0,
+          "mult": 0,
+          "pierce": 0,
+          "rgn": 0,
+          "size": 0,
+          "spd": 0,
+          "trs": 0,
+          "xp": 0
+        },
+        "xp": 20.92
+      },
+      "upgradeConfirmed": true,
+      "dead": true,
+      "samples": [
+        {
+          "time": 3.9,
+          "fps": 137,
+          "enemies": 7,
+          "kills": 3,
+          "hp": 168,
+          "rendererWorkingSetMiB": 841,
+          "jsHeapMiB": 190
+        },
+        {
+          "time": 13.7,
+          "fps": 181,
+          "enemies": 17,
+          "kills": 14,
+          "hp": 168,
+          "rendererWorkingSetMiB": 821,
+          "jsHeapMiB": 190
+        },
+        {
+          "time": 24.1,
+          "fps": 124,
+          "enemies": 52,
+          "kills": 28,
+          "hp": 150,
+          "rendererWorkingSetMiB": 851,
+          "jsHeapMiB": 190
+        },
+        {
+          "time": 31,
+          "fps": 172,
+          "enemies": 20,
+          "kills": 91,
+          "hp": 188,
+          "rendererWorkingSetMiB": 835,
+          "jsHeapMiB": 190
+        },
+        {
+          "time": 39.9,
+          "fps": 132,
+          "enemies": 34,
+          "kills": 111,
+          "hp": 150,
+          "rendererWorkingSetMiB": 919,
+          "jsHeapMiB": 190
+        },
+        {
+          "time": 51.3,
+          "fps": 158,
+          "enemies": 55,
+          "kills": 166,
+          "hp": 172,
+          "rendererWorkingSetMiB": 909,
+          "jsHeapMiB": 190
+        },
+        {
+          "time": 62.2,
+          "fps": 103,
+          "enemies": 63,
+          "kills": 219,
+          "hp": 188,
+          "rendererWorkingSetMiB": 844,
+          "jsHeapMiB": 190
+        },
+        {
+          "time": 70.4,
+          "fps": 104,
+          "enemies": 62,
+          "kills": 260,
+          "hp": 144,
+          "rendererWorkingSetMiB": 897,
+          "jsHeapMiB": 190
+        },
+        {
+          "time": 80.3,
+          "fps": 110,
+          "enemies": 65,
+          "kills": 303,
+          "hp": 163,
+          "rendererWorkingSetMiB": 908,
+          "jsHeapMiB": 190
+        },
+        {
+          "time": 89.2,
+          "fps": 183,
+          "enemies": 30,
+          "kills": 383,
+          "hp": 160,
+          "rendererWorkingSetMiB": 955,
+          "jsHeapMiB": 190
+        },
+        {
+          "time": 100.2,
+          "fps": 94,
+          "enemies": 67,
+          "kills": 425,
+          "hp": 154,
+          "rendererWorkingSetMiB": 1012,
+          "jsHeapMiB": 190
+        },
+        {
+          "time": 112.6,
+          "fps": 118,
+          "enemies": 67,
+          "kills": 488,
+          "hp": 109,
+          "rendererWorkingSetMiB": 991,
+          "jsHeapMiB": 190
+        },
+        {
+          "time": 122.9,
+          "fps": 130,
+          "enemies": 66,
+          "kills": 541,
+          "hp": 128,
+          "rendererWorkingSetMiB": 961,
+          "jsHeapMiB": 190
+        }
+      ],
+      "last": {
+        "boss": false,
+        "bullets": 0,
+        "choices": 0,
+        "dead": true,
+        "enemies": 63,
+        "fps": 137,
+        "hp": 0,
+        "kills": 579,
+        "level": 18,
+        "maxHp": 188,
+        "moves": [
+          [
+            "ember",
+            3
+          ],
+          [
+            "flame-wheel",
+            3
+          ],
+          [
+            "swords-dance",
+            1
+          ],
+          [
+            "agility",
+            2
+          ]
+        ],
+        "nearestEnemy": [
+          524.246337890625,
+          -41.1118469238281
+        ],
+        "nearestOrb": null,
+        "orbs": 1,
+        "paused": false,
+        "position": [
+          517.77001953125,
+          -35.033992767334
+        ],
+        "time": 129.953427561328,
+        "upgrades": {
+          "amp": 0,
+          "atk": 0,
+          "cd": 0,
+          "def": 0,
+          "dstrike": 0,
+          "edge": 0,
+          "fang": 0,
+          "heal": 0,
+          "hp": 1,
+          "lens": 0,
+          "mag": 4,
+          "mult": 0,
+          "pierce": 1,
+          "rgn": 2,
+          "size": 1,
+          "spd": 0,
+          "trs": 0,
+          "xp": 0
+        },
+        "xp": 1035.488
+      }
+    },
+    "shortSoundSamples": 1839
+  }
+}

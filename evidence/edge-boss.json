@@ -1,0 +1,108 @@
+{
+  "name": "edge",
+  "browserVersion": "157.0.4341.46",
+  "network": [],
+  "errors": [],
+  "messages": [
+    "log: Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org",
+    "log: OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL",
+    "log: Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+  ],
+  "checks": {
+    "start": {
+      "url": "file:",
+      "online": false,
+      "pixels": [
+        1280,
+        717
+      ]
+    },
+    "audio": [
+      {
+        "state": "running",
+        "peak": 0.13002826273441315
+      },
+      {
+        "state": "running",
+        "peak": 0
+      }
+    ],
+    "selected": 4,
+    "pause": true,
+    "movement": {
+      "wasd": 119.111663818359,
+      "arrows": 117.183578491211
+    },
+    "run": {
+      "peakEnemies": 1,
+      "peakBullets": 0,
+      "bossSeen": true,
+      "xpSeen": false,
+      "upgradeConfirmed": false,
+      "dead": false,
+      "samples": [
+        {
+          "time": 4,
+          "fps": 164,
+          "enemies": 0,
+          "kills": 0,
+          "hp": 88,
+          "rendererWorkingSetMiB": 652,
+          "jsHeapMiB": 190
+        }
+      ],
+      "last": {
+        "boss": true,
+        "bullets": 2,
+        "choices": 0,
+        "dead": false,
+        "enemies": 1,
+        "fps": 136,
+        "hp": 88,
+        "kills": 0,
+        "level": 1,
+        "maxHp": 88,
+        "moves": [
+          [
+            "ember",
+            1
+          ]
+        ],
+        "nearestEnemy": [
+          305.878570556641,
+          -188.246780395508
+        ],
+        "nearestOrb": null,
+        "orbs": 0,
+        "paused": false,
+        "position": [
+          119.111663818359,
+          117.183578491211
+        ],
+        "time": 5.62874213564211,
+        "upgrades": {
+          "amp": 0,
+          "atk": 0,
+          "cd": 0,
+          "def": 0,
+          "dstrike": 0,
+          "edge": 0,
+          "fang": 0,
+          "heal": 0,
+          "hp": 0,
+          "lens": 0,
+          "mag": 0,
+          "mult": 0,
+          "pierce": 0,
+          "rgn": 0,
+          "size": 0,
+          "spd": 0,
+          "trs": 0,
+          "xp": 0
+        },
+        "xp": 0
+      }
+    },
+    "shortSoundSamples": 11
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "name": "chrome",
+  "browserVersion": "157.0.8103.78",
+  "network": [],
+  "errors": [],
+  "messages": [
+    "log: Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org",
+    "log: OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL",
+    "log: Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+  ],
+  "checks": {
+    "start": {
+      "url": "file:",
+      "online": false,
+      "pixels": [
+        1280,
+        717
+      ]
+    },
+    "audio": [
+      {
+        "state": "running",
+        "peak": 0.1148320809006691
+      },
+      {
+        "state": "running",
+        "peak": 0
+      }
+    ],
+    "selected": 813,
+    "pause": true,
+    "movement": {
+      "wasd": 121.127471923828,
+      "arrows": 118.246482849121
+    },
+    "run": {
+      "peakEnemies": 11,
+      "peakBullets": 8,
+      "bossSeen": false,
+      "xpSeen": true,
+      "firstChoice": {
+        "boss": false,
+        "bullets": 2,
+        "choices": 3,
+        "dead": false,
+        "enemies": 0,
+        "fps": 201,
+        "hp": 92,
+        "kills": 8,
+        "level": 2,
+        "maxHp": 92,
+        "moves": [
+          [
+            "ember",
+            1
+          ]
+        ],
+        "nearestEnemy": null,
+        "nearestOrb": [
+          33.2642669677734,
+          168.093688964844
+        ],
+        "orbs": 4,
+        "paused": false,
+        "position": [
+          -160.697174072266,
+          55.6622123718262
+        ],
+        "time": 16.3248914862918,
+        "upgrades": {
+          "amp": 0,
+          "atk": 0,
+          "cd": 0,
+          "def": 0,
+          "dstrike": 0,
+          "edge": 0,
+          "fang": 0,
+          "heal": 0,
+          "hp": 0,
+          "lens": 0,
+          "mag": 0,
+          "mult": 0,
+          "pierce": 0,
+          "rgn": 0,
+          "size": 0,
+          "spd": 0,
+          "trs": 0,
+          "xp": 0
+        },
+        "xp": 17.4
+      },
+      "upgradeConfirmed": true,
+      "dead": true,
+      "samples": [
+        {
+          "time": 3.9,
+          "fps": 121,
+          "enemies": 2,
+          "kills": 2,
+          "hp": 92,
+          "rendererWorkingSetMiB": 945,
+          "jsHeapMiB": 169
+        },
+        {
+          "time": 16.8,
+          "fps": 222,
+          "enemies": 0,
+          "kills": 8,
+          "hp": 92,
+          "rendererWorkingSetMiB": 714,
+          "jsHeapMiB": 169
+        },
+        {
+          "time": 29.3,
+          "fps": 213,
+          "enemies": 1,
+          "kills": 11,
+          "hp": 82,
+          "rendererWorkingSetMiB": 767,
+          "jsHeapMiB": 169
+        },
+        {
+          "time": 39.3,
+          "fps": 178,
+          "enemies": 3,
+          "kills": 23,
+          "hp": 61,
+          "rendererWorkingSetMiB": 765,
+          "jsHeapMiB": 169
+        },
+        {
+          "time": 51.5,
+          "fps": 197,
+          "enemies": 3,
+          "kills": 28,
+          "hp": 61,
+          "rendererWorkingSetMiB": 692,
+          "jsHeapMiB": 169
+        },
+        {
+          "time": 63.8,
+          "fps": 156,
+          "enemies": 4,
+          "kills": 33,
+          "hp": 68,
+          "rendererWorkingSetMiB": 777,
+          "jsHeapMiB": 169
+        },
+        {
+          "time": 75.9,
+          "fps": 192,
+          "enemies": 2,
+          "kills": 41,
+          "hp": 68,
+          "rendererWorkingSetMiB": 808,
+          "jsHeapMiB": 169
+        },
+        {
+          "time": 88.3,
+          "fps": 175,
+          "enemies": 5,
+          "kills": 45,
+          "hp": 68,
+          "rendererWorkingSetMiB": 896,
+          "jsHeapMiB": 169
+        }
+      ],
+      "last": {
+        "boss": false,
+        "bullets": 0,
+        "choices": 3,
+        "dead": true,
+        "enemies": 8,
+        "fps": 215,
+        "hp": 0,
+        "kills": 52,
+        "level": 8,
+        "maxHp": 92,
+        "moves": [
+          [
+            "ember",
+            2
+          ],
+          [
+            "tackle",
+            2
+          ],
+          [
+            "hyper-voice",
+            1
+          ]
+        ],
+        "nearestEnemy": [
+          -168.222061157227,
+          -1645.53881835938
+        ],
+        "nearestOrb": [
+          -425.157562255859,
+          -1286.99584960938
+        ],
+        "orbs": 8,
+        "paused": false,
+        "position": [
+          -168.216262817383,
+          -1645.20678710938
+        ],
+        "time": 95.9229096681047,
+        "upgrades": {
+          "amp": 0,
+          "atk": 0,
+          "cd": 0,
+          "def": 0,
+          "dstrike": 0,
+          "edge": 0,
+          "fang": 0,
+          "heal": 0,
+          "hp": 0,
+          "lens": 0,
+          "mag": 0,
+          "mult": 0,
+          "pierce": 0,
+          "rgn": 0,
+          "size": 0,
+          "spd": 0,
+          "trs": 0,
+          "xp": 0
+        },
+        "xp": 6.66497478626059
+      }
+    },
+    "completedRun": {
+      "best_level": 8,
+      "best_time": 95,
+      "bosses": 0,
+      "chests": 0,
+      "coins_total": 24,
+      "defeated_runs": 0,
+      "kills": 52,
+      "pulls": 0,
+      "rifts": 0,
+      "runs": 1,
+      "shinies": 0,
+      "tk_electric": 3,
+      "tk_fighting": 7,
+      "tk_flying": 1,
+      "tk_grass": 14,
+      "tk_ground": 7,
+      "tk_ice": 1,
+      "tk_normal": 9,
+      "tk_rock": 8,
+      "tk_water": 6,
+      "total_time": 95
+    },
+    "restart": true,
+    "shortSoundSamples": 575
+  }
+}

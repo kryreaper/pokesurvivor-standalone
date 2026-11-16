@@ -1,0 +1,33 @@
+{
+  "name": "chrome",
+  "browserVersion": "157.0.8103.78",
+  "network": [],
+  "errors": [],
+  "messages": [
+    "log: Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org",
+    "log: OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL",
+    "log: Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+  ],
+  "checks": {
+    "start": {
+      "url": "file:",
+      "online": false,
+      "pixels": [
+        1280,
+        717
+      ]
+    },
+    "audio": [
+      {
+        "state": "running",
+        "peak": 0.16082751750946045
+      },
+      {
+        "state": "running",
+        "peak": 0
+      }
+    ],
+    "credit": "Standalone edition · KryReaper · Discord invite",
+    "invite": "https://discord.gg/SjqVvVEh7f"
+  }
+}
