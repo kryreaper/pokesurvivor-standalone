@@ -20,6 +20,8 @@ The build imports the upstream assets using the desktop-compatible Godot rendere
 
 `build.mjs --pack-only` also accepts an existing `web-export` with `game.pck`, `godot.js`, `godot.wasm` and both audio worklets. Use it after editing the shell when the Godot project has already been exported.
 
+To package the verified HTML for ordinary static HTTPS hosting, run `node build-hosted.mjs PokeSurvivor-Standalone.html dist`. This extracts the exact compressed resources from the offline file. The generated `index.html` loads its assets from the same directory over HTTPS.
+
 ## Code map
 
 | System | Godot source and browser execution |
